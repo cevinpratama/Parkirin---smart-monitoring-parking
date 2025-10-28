@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -40,7 +41,7 @@ fun splashPage(navController: NavController){
             Spacer(modifier = Modifier.weight(2f))
 
             Text(
-                text = "ParkirIn",
+                text = stringResource(R.string.app_name),
                 fontSize = 64.sp,
                 style = MaterialTheme.typography.bodyLarge,color = BiruJ
             )
@@ -48,14 +49,14 @@ fun splashPage(navController: NavController){
             Spacer(modifier = Modifier.height(2.dp))
 
             Text(
-                text = "temukan, parkir, lanjut",
+                text = stringResource(R.string.slogan),
                 fontSize = 19.sp,
                 style = LucidaSansStyle,color = Biruk
             )
 
             Spacer(modifier = Modifier.weight(2f))
             Text(
-                text = "click anywhere",
+                text = stringResource(R.string.tekan_dimanapun),
                 fontSize = 12.sp,
                 color = Color.Gray
             )
