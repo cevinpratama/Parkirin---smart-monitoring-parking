@@ -32,5 +32,8 @@ fun ParkirINApp() {
         composable("splashPage") {
             splashPage(navController = navController)
         }
+        composable("homeScreen") {
+            HomeScreen(navController = navController)
+        }
     }
 }

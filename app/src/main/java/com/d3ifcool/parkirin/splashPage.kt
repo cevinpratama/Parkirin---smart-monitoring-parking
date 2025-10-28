@@ -1,5 +1,6 @@
 package com.d3ifcool.parkirin
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,7 +23,11 @@ import com.d3ifcool.parkirin.ui.theme.LucidaSansStyle
 @Composable
 fun splashPage(navController: NavController){
     Surface(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .clickable{
+                navController.navigate("HomeScreen")
+            },
         color = Color.White
     ) {
         Column (
