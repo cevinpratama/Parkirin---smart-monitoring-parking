@@ -27,7 +27,7 @@ fun ParkirINApp() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination =" "
+        startDestination ="splashPage"
     ){
         composable("splashPage") {
             splashPage(navController = navController)
