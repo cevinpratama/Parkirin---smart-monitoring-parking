@@ -3,4 +3,10 @@
     <string name="app_name">parkirIn</string>
     <string name="slogan">find, park, go</string>
     <string name="tekan_dimanapun">click anywhere</string>
+    <string name="home_parking_slot_title">Parking Slot</string>
+    <string name="home_label_total">Total</string>
+    <string name="home_label_available">Available</string>
+    <string name="home_label_status">Status</string>
+    <string name="home_status_full">Full</string>
+    <string name="home_status_available">Available</string>
 </resources>

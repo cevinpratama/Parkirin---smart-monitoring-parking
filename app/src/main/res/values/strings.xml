@@ -2,5 +2,11 @@
     <string name="app_name">parkirIn</string>
     <string name="slogan">temukan, parkir, lanjut</string>
     <string name="tekan_dimanapun">tekan dimanapun</string>
+    <string name="home_parking_slot_title">Slot Parkir</string>
+    <string name="home_label_total">Jumlah</string>
+    <string name="home_label_available">Tersedia</string>
+    <string name="home_label_status">Status</string>
+    <string name="home_status_full">Penuh</string>
+    <string name="home_status_available">Tersedia</string>
 
 </resources>
