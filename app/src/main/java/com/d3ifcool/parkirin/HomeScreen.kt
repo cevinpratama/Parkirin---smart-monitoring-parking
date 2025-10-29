@@ -4,11 +4,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -25,8 +27,11 @@ import com.d3ifcool.parkirin.ui.theme.BiruJ
 @Composable
 fun HomeScreen(navController: NavController){
 
-      val isDark = isSystemInDarkTheme()
+    val isDark = isSystemInDarkTheme()
     val backgroundColor = if (isDark) Color(0xFF121212) else Color.White
+
+    val jumlah = 24
+    val tersedia = 4
 
     Scaffold (
         containerColor = backgroundColor,
@@ -57,38 +62,94 @@ fun HomeScreen(navController: NavController){
                         .background(color = BiruJ),
                     contentAlignment = Alignment.TopCenter
                 ){
+
                     Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                     ){
 
-                    Spacer(modifier = Modifier.height(15.dp))
+                        Spacer(modifier = Modifier.height(15.dp))
 
-                    Text(
-                        text = "Slot Parkir",
-                        fontSize = 45.sp,
-                        color = Color.White
-                    )
+                        Text(
+                            text = "Slot Parkir",
+                            fontSize = 45.sp,
+                            color = Color.White
+                        )
 
-                    Spacer(modifier = Modifier.height(50.dp))
+                        Spacer(modifier = Modifier.height(50.dp))
 
-                    Text(
-                        text = "Jumlah: 24 slot",
-                        fontSize = 20.sp,
-                        color = Color.White
-                    )
-                        Spacer(modifier = Modifier.height(20.dp))
-                    Text(
-                        text = "Tersedia : 4 slot",
-                        fontSize = 20.sp,
-                        color = Color.White
-                    )
-                        Spacer(modifier = Modifier.height(70.dp))
+                        Row{
+                            Column(
+                                horizontalAlignment = Alignment.End
+                            ) {
+                                Text(
+                                    text = "Jumlah",
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
 
-                    Text(
-                        text = "Status : Tersedia",
-                        fontSize = 20.sp,
-                        color = Color.Green
-                    )
+                                Text(
+                                    text = "Tersedia",
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
+
+                                Text(
+                                    text = "Status",
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
+                            }
+
+                            Spacer(modifier = Modifier.width(8.dp))
+
+                            Column {
+                                Text(
+                                    text = ":",
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
+
+                                Text(
+                                    text = ":",
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
+
+                                Text(
+                                    text = ":",
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(8.dp))
+
+                            Column {
+                                Text(
+                                    text = jumlah.toString(),
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
+                                Text(
+                                    text = tersedia.toString(),
+                                    fontSize = 20.sp,
+                                    color = Color.White
+                                )
+                              if(tersedia == 0)
+                                Text(
+                                    text = "Penuh",
+                                    fontSize = 20.sp,
+                                    color = Color.Red
+                                )
+                                else
+                                Text(
+                                    text = "Tersedia",
+                                    fontSize = 20.sp,
+                                    color = Color.Green
+                                )
+                            }
+                        }
+
+
 
                     }
 
