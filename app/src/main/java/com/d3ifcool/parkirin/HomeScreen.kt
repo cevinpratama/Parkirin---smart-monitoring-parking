@@ -12,7 +12,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -37,7 +39,6 @@ fun HomeScreen(navController: NavController) {
 
     val jumlah = 24
     val tersedia = 4
-    var jalan = 0
 
 
     Scaffold(
@@ -49,14 +50,59 @@ fun HomeScreen(navController: NavController) {
         }
     ) { innerPadding ->
 
-        Box(
+        val scrollState = rememberScrollState()
+        Column(
             modifier = Modifier
                 .padding(innerPadding)
-                .fillMaxSize(),
-            contentAlignment = Alignment.TopCenter
+                .fillMaxSize()
+                .verticalScroll(scrollState),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .height(700.dp),
+                contentAlignment = Alignment.TopCenter
         ) {
 
-            Column {
+            Canvas(modifier = Modifier.fillMaxSize()) {
+                val yGaris1 = 970f
+                val yGaris2 = 1350f
+                val yGaris3 = 1600f
+                val yGarisVertikal_bawah = 2090f
+
+                drawLine(
+                            color = BiruJ,
+                            start = Offset(50f, yGaris1),
+                            end = Offset(1005f, yGaris1),
+                            strokeWidth = 4f
+                        )
+                        drawLine(
+                            color = BiruJ,
+                            start = Offset(50f, yGaris2),
+                            end = Offset(1005f, yGaris2),
+                            strokeWidth = 4f
+                        )
+                        drawLine(
+                            color = BiruJ,
+                            start = Offset(50f, yGaris3),
+                            end = Offset(750f, yGaris3),
+                            strokeWidth = 4f
+                        )
+                        drawLine(
+                            color = BiruJ,
+                            start = Offset(750f, yGarisVertikal_bawah),
+                            end = Offset(750f, yGaris3),
+                            strokeWidth = 4f
+                        )
+                        drawLine(
+                            color = BiruJ,
+                            start = Offset(1005f, yGarisVertikal_bawah),
+                            end = Offset(1005f, yGaris2),
+                            strokeWidth = 4f
+                        )
+            }
+            Column{
 
                 Spacer(modifier = Modifier.height(24.dp))
 
@@ -208,7 +254,7 @@ fun HomeScreen(navController: NavController) {
                         fontSize = 32.sp,
                         color = Color.Gray
                     )
-                         Spacer(modifier = Modifier.height(20.dp))
+                         Spacer(modifier = Modifier.height(25.dp))
                     Column(
                         horizontalAlignment = Alignment.Start
                     ) {
@@ -218,53 +264,14 @@ fun HomeScreen(navController: NavController) {
                                 fontSize = 32.sp,
                                 color = Color.Gray
                             )
-                            Spacer(modifier = Modifier.height(30.dp))
+                            Spacer(modifier = Modifier.height(25.dp))
                         }
                     }
+                    }
                 }
-                }
-
             }
         }
-        Canvas(modifier = Modifier.fillMaxSize()) {
-                    drawLine(
-                     color = BiruJ,
-                        start = Offset(50f, size.height / 2f),
-                        end = Offset(1005f, size.height / 2f),
-                        strokeWidth = 4f
-                    )
-                }
-        Canvas(modifier = Modifier.fillMaxSize()) {
-                    drawLine(
-                     color = BiruJ,
-                        start = Offset(50f, size.height / 1.5f),
-                        end = Offset(1005f, size.height / 1.5f),
-                        strokeWidth = 4f
-                    )
-                }
-        Canvas(modifier = Modifier.fillMaxSize()) {
-                    drawLine(
-                     color = BiruJ,
-                        start = Offset(50f, size.height / 1.3f),
-                        end = Offset(750f, size.height / 1.3f),
-                        strokeWidth = 4f
-                    )
-                }
-        Canvas(modifier = Modifier.fillMaxSize()) {
-                    drawLine(
-                     color = BiruJ,
-                        start = Offset(750f, 2090f),
-                        end = Offset(750f, size.height / 1.3f),
-                        strokeWidth = 4f
-                    )
         }
-        Canvas(modifier = Modifier.fillMaxSize()) {
-                    drawLine(
-                     color = BiruJ,
-                        start = Offset(1005f, 2090f),
-                        end = Offset(1005f, size.height / 1.5f),
-                        strokeWidth = 4f
-                    )
-        }
+
     }
 }
