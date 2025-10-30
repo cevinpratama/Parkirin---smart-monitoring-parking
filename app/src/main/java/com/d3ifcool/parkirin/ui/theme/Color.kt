@@ -13,3 +13,5 @@ val Pink40 = Color(0xFF7D5260)
 val BiruJ = Color(0xFF0063AE)
 
 val Biruk = Color(0xFF002552)
+
+val BiruB = Color(0xFFA3B3BF)
