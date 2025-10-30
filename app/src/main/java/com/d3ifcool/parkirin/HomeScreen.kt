@@ -201,7 +201,38 @@ fun HomeScreen(navController: NavController) {
                         strokeWidth = 4f
                     )
                 }
-
+        Canvas(modifier = Modifier.fillMaxSize()) {
+                    drawLine(
+                     color = BiruJ,
+                        start = Offset(50f, size.height / 1.5f),
+                        end = Offset(1005f, size.height / 1.5f),
+                        strokeWidth = 4f
+                    )
+                }
+        Canvas(modifier = Modifier.fillMaxSize()) {
+                    drawLine(
+                     color = BiruJ,
+                        start = Offset(50f, size.height / 1.3f),
+                        end = Offset(750f, size.height / 1.3f),
+                        strokeWidth = 4f
+                    )
+                }
+        Canvas(modifier = Modifier.fillMaxSize()) {
+                    drawLine(
+                     color = BiruJ,
+                        start = Offset(750f, 2090f),
+                        end = Offset(750f, size.height / 1.3f),
+                        strokeWidth = 4f
+                    )
+                }
+        Canvas(modifier = Modifier.fillMaxSize()) {
+                    drawLine(
+                     color = BiruJ,
+                        start = Offset(1005f, 2090f),
+                        end = Offset(1005f, size.height / 1.5f),
+                        strokeWidth = 4f
+                    )
+                }
 
     }
 }
