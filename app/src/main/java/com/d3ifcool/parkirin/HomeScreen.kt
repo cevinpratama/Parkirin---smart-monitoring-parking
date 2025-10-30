@@ -23,6 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.d3ifcool.parkirin.ui.theme.BiruB
 import com.d3ifcool.parkirin.ui.theme.BiruJ
 
 
@@ -76,77 +77,67 @@ fun HomeScreen(navController: NavController) {
                             color = Color.White
                         )
 
-                        Spacer(modifier = Modifier.height(50.dp))
+                        Spacer(modifier = Modifier.height(40.dp))
 
                         Row {
                             Column(
                                 horizontalAlignment = Alignment.End
                             ) {
-                                Text(
-                                    text = stringResource(R.string.home_label_total),
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
-
-                                Text(
-                                    text = stringResource(R.string.home_label_available),
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
-
-                                Text(
-                                    text = stringResource(R.string.home_label_status),
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
+                                Box(
+                                    modifier = Modifier
+                                        .size(width = 130.dp, height = 130.dp)
+                                        .clip(RoundedCornerShape(16.dp))
+                                        .background(color = BiruB),
+                                    contentAlignment = Alignment.TopCenter
+                                ){
+                                     Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally
+                                    ){
+                                        Spacer(modifier = Modifier.height(20.dp))
+                                        Text(
+                                            text = stringResource(R.string.home_label_total),
+                                            fontSize = 20.sp,
+                                            color = Color.White
+                                        )
+                                        Spacer(modifier = Modifier.height(15.dp))
+                                        Text(
+                                            text = jumlah.toString(),
+                                            fontSize = 30.sp,
+                                            color = Color.White
+                                        )
+                                    }
+                                }
                             }
 
-                            Spacer(modifier = Modifier.width(8.dp))
+                            Spacer(modifier = Modifier.width(20.dp))
 
-                            Column {
-                                Text(
-                                    text = ":",
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
-
-                                Text(
-                                    text = ":",
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
-
-                                Text(
-                                    text = ":",
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
-                            }
-                            Spacer(modifier = Modifier.width(8.dp))
-
-                            Column {
-                                Text(
-                                    text = jumlah.toString(),
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
-                                Text(
-                                    text = tersedia.toString(),
-                                    fontSize = 20.sp,
-                                    color = Color.White
-                                )
-                                if (tersedia == 0)
-                                    Text(
-                                        text = stringResource(R.string.home_status_full),
-                                        fontSize = 20.sp,
-                                        color = Color.Red
-                                    )
-                                else
-                                    Text(
-                                        text = stringResource(R.string.home_status_available),
-                                        fontSize = 20.sp,
-                                        color = Color.Green
-                                    )
+                            Column(
+                                horizontalAlignment = Alignment.End
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(width = 130.dp, height = 130.dp)
+                                        .clip(RoundedCornerShape(16.dp))
+                                        .background(color = BiruB),
+                                    contentAlignment = Alignment.TopCenter
+                                ){
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally
+                                    ){
+                                        Spacer(modifier = Modifier.height(20.dp))
+                                        Text(
+                                            text = stringResource(R.string.home_parking_slot_title),
+                                            fontSize = 20.sp,
+                                            color = Color.White
+                                        )
+                                        Spacer(modifier = Modifier.height(15.dp))
+                                        Text(
+                                            text = tersedia.toString(),
+                                            fontSize = 30.sp,
+                                            color = Color.White
+                                        )
+                                    }
+                                }
                             }
                         }
                     }
