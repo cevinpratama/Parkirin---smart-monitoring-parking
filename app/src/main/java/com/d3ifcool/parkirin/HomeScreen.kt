@@ -37,6 +37,7 @@ fun HomeScreen(navController: NavController) {
 
     val jumlah = 24
     val tersedia = 4
+    var jalan = 0
 
 
     Scaffold(
@@ -190,6 +191,38 @@ fun HomeScreen(navController: NavController) {
                         )
                     }
                 }
+                Spacer(modifier = Modifier.height(30.dp))
+
+                Row {
+                    repeat(4) {
+                        Text(
+                            text = "<",
+                            fontSize = 32.sp,
+                            color = Color.Gray
+                        )
+                        Spacer(modifier = Modifier.width(50.dp))
+                    }
+                    Column {
+                    Text(
+                        text = "<",
+                        fontSize = 32.sp,
+                        color = Color.Gray
+                    )
+                         Spacer(modifier = Modifier.height(20.dp))
+                    Column(
+                        horizontalAlignment = Alignment.Start
+                    ) {
+                        repeat(3) {
+                            Text(
+                                text = "^",
+                                fontSize = 32.sp,
+                                color = Color.Gray
+                            )
+                            Spacer(modifier = Modifier.height(30.dp))
+                        }
+                    }
+                }
+                }
 
             }
         }
@@ -224,7 +257,7 @@ fun HomeScreen(navController: NavController) {
                         end = Offset(750f, size.height / 1.3f),
                         strokeWidth = 4f
                     )
-                }
+        }
         Canvas(modifier = Modifier.fillMaxSize()) {
                     drawLine(
                      color = BiruJ,
@@ -232,7 +265,6 @@ fun HomeScreen(navController: NavController) {
                         end = Offset(1005f, size.height / 1.5f),
                         strokeWidth = 4f
                     )
-                }
-
+        }
     }
 }
