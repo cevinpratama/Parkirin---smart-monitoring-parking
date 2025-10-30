@@ -1,5 +1,6 @@
 package com.d3ifcool.parkirin
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
@@ -18,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -143,13 +145,63 @@ fun HomeScreen(navController: NavController) {
                     }
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(30.dp))
 
-                Text(
-                    text = "Ini Adalah Main Screen"
-                )
+                Row {
+                    Box(
+                        modifier = Modifier
+                            .size(width = 100.dp, height = 100.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                            .background(color = BiruB),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Text(
+                            text = "A1",
+                            fontSize = 32.sp,
+                            color = Color.White
+                        )
+                    }
+                     Spacer(modifier = Modifier.width(15.dp))
+                    Box(
+                        modifier = Modifier
+                            .size(width = 100.dp, height = 100.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                            .background(color = BiruB),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Text(
+                            text = "A2",
+                            fontSize = 32.sp,
+                            color = Color.White
+                        )
+                    }
+                     Spacer(modifier = Modifier.width(15.dp))
+                    Box(
+                        modifier = Modifier
+                            .size(width = 100.dp, height = 100.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                            .background(color = BiruB),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Text(
+                            text = "A3",
+                            fontSize = 32.sp,
+                            color = Color.White
+                        )
+                    }
+                }
 
             }
         }
+        Canvas(modifier = Modifier.fillMaxSize()) {
+                    drawLine(
+                     color = BiruJ,
+                        start = Offset(50f, size.height / 2f),
+                        end = Offset(1005f, size.height / 2f),
+                        strokeWidth = 4f
+                    )
+                }
+
+
     }
 }
