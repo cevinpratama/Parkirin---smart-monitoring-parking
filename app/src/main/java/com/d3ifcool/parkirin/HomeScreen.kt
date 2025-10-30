@@ -208,7 +208,7 @@ fun HomeScreen(navController: NavController) {
                             color = Color.White
                         )
                     }
-                     Spacer(modifier = Modifier.width(15.dp))
+                     Spacer(modifier = Modifier.width(13.dp))
                     Box(
                         modifier = Modifier
                             .size(width = 100.dp, height = 100.dp)
@@ -222,7 +222,7 @@ fun HomeScreen(navController: NavController) {
                             color = Color.White
                         )
                     }
-                     Spacer(modifier = Modifier.width(15.dp))
+                     Spacer(modifier = Modifier.width(13.dp))
                     Box(
                         modifier = Modifier
                             .size(width = 100.dp, height = 100.dp)
@@ -240,7 +240,7 @@ fun HomeScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(30.dp))
 
                 Row {
-                    repeat(4) {
+                    repeat(5) {
                         Text(
                             text = "<",
                             fontSize = 32.sp,
@@ -248,13 +248,41 @@ fun HomeScreen(navController: NavController) {
                         )
                         Spacer(modifier = Modifier.width(50.dp))
                     }
-                    Column {
-                    Text(
-                        text = "<",
-                        fontSize = 32.sp,
-                        color = Color.Gray
-                    )
-                         Spacer(modifier = Modifier.height(25.dp))
+                }
+                Spacer(modifier = Modifier.height(35.dp))
+                Row {
+                    Row {
+                        Box(
+                        modifier = Modifier
+                            .size(width = 100.dp, height = 100.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                            .background(color = BiruB),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Text(
+                            text = "A4",
+                            fontSize = 32.sp,
+                            color = Color.White
+                        )
+                    }
+                     Spacer(modifier = Modifier.width(13.dp))
+                    Box(
+                        modifier = Modifier
+                            .size(width = 100.dp, height = 100.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                            .background(color = BiruB),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Text(
+                            text = "A5",
+                            fontSize = 32.sp,
+                            color = Color.White
+                        )
+                    }
+
+                  }
+                    Spacer(modifier = Modifier.width(55.dp))
+
                     Column(
                         horizontalAlignment = Alignment.Start
                     ) {
@@ -267,8 +295,8 @@ fun HomeScreen(navController: NavController) {
                             Spacer(modifier = Modifier.height(25.dp))
                         }
                     }
-                    }
                 }
+
             }
         }
         }
