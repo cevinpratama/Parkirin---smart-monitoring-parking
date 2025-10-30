@@ -29,7 +29,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navOptions
 import com.d3ifcool.parkirin.ui.theme.BiruB
 import com.d3ifcool.parkirin.ui.theme.BiruJ
 
@@ -297,7 +296,59 @@ fun HomeScreen(navController: NavController) {
                         }
                     }
                 }
+                Spacer(modifier = Modifier.height(25.dp))
 
+                Row {
+                    Box (
+                        modifier = Modifier
+                            .size(width = 150.dp, height = 50.dp)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(color = BiruJ),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Row (
+                            verticalAlignment = Alignment.CenterVertically
+                        ){
+                            Box(
+                          modifier = Modifier
+                              .size(width = 20.dp, height = 20.dp)
+                              .clip(RoundedCornerShape(25.dp))
+                              .background(Color.White)
+                            ){}
+                            Spacer(modifier = Modifier.width(10.dp))
+                            Text(
+                                text = "Full",
+                                fontSize = 32.sp,
+                                color = Color.White
+                            )
+                        }
+                    }
+                      Spacer(modifier = Modifier.width(20.dp))
+                    Box (
+                        modifier = Modifier
+                            .size(width = 150.dp, height = 50.dp)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(color = BiruJ),
+                        contentAlignment = Alignment.Center
+                    ){
+                        Row (
+                            verticalAlignment = Alignment.CenterVertically
+                        ){
+                            Box(
+                          modifier = Modifier
+                              .size(width = 20.dp, height = 20.dp)
+                              .clip(RoundedCornerShape(25.dp))
+                              .background(Color.White)
+                        ){}
+                            Spacer(modifier = Modifier.width(10.dp))
+                            Text(
+                                text = "Full",
+                                fontSize = 32.sp,
+                                color = Color.White
+                            )
+                        }
+                    }
+                }
 
             }
         }
