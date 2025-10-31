@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -39,8 +40,8 @@ fun HomeScreen(navController: NavController) {
     val isDark = isSystemInDarkTheme()
     val backgroundColor = if (isDark) Color(0xFF121212) else Color.White
 
-    val jumlah = 24
-    val tersedia = 4
+    val jumlah = 5
+    val tersedia = 2
 
 
     Scaffold(
@@ -53,6 +54,9 @@ fun HomeScreen(navController: NavController) {
     ) { innerPadding ->
 
         val scrollState = rememberScrollState()
+        val cardShape = RoundedCornerShape(16.dp)
+        val slotShape = RoundedCornerShape(5.dp)
+        val circleShape = RoundedCornerShape(20.dp)
         Column(
             modifier = Modifier
                 .padding(innerPadding)
@@ -110,8 +114,12 @@ fun HomeScreen(navController: NavController) {
                 Box(
                     modifier = Modifier
                         .size(width = 320.dp, height = 287.dp)
+                        .shadow(
+                            elevation = 10.dp,
+                            shape = cardShape
+                        )
                         .clip(RoundedCornerShape(16.dp))
-                        .background(color = BiruJ),
+                        .background(color = BiruJ, shape = cardShape),
                     contentAlignment = Alignment.TopCenter
                 ) {
 
@@ -136,8 +144,16 @@ fun HomeScreen(navController: NavController) {
                                 Box(
                                     modifier = Modifier
                                         .size(width = 130.dp, height = 130.dp)
+                                        .shadow(
+                                            elevation = 10.dp,
+                                            shape = cardShape
+                                        )
                                         .clip(RoundedCornerShape(16.dp))
-                                        .background(color = BiruB),
+                                        .background(BiruJ, shape = cardShape)
+                                        .background(
+                                            color = BiruB.copy(alpha = 0.59f),
+                                            shape = cardShape
+                                        ),
                                     contentAlignment = Alignment.TopCenter
                                 ) {
                                     Column(
@@ -167,8 +183,16 @@ fun HomeScreen(navController: NavController) {
                                 Box(
                                     modifier = Modifier
                                         .size(width = 130.dp, height = 130.dp)
+                                        .shadow(
+                                            elevation = 10.dp,
+                                            shape = cardShape
+                                        )
                                         .clip(RoundedCornerShape(16.dp))
-                                        .background(color = BiruB),
+                                        .background(BiruJ, shape = cardShape)
+                                        .background(
+                                            color = BiruB.copy(alpha = 0.59f),
+                                            shape = cardShape
+                                        ),
                                     contentAlignment = Alignment.TopCenter
                                 ) {
                                     Column(
@@ -199,8 +223,12 @@ fun HomeScreen(navController: NavController) {
                     Box(
                         modifier = Modifier
                             .size(width = 100.dp, height = 100.dp)
-                            .clip(RoundedCornerShape(5.dp))
-                            .background(color = BiruB),
+                            .shadow(
+                                elevation = 10.dp,
+                                shape = slotShape
+                            )
+                            .background(Color.White, shape = slotShape)
+                            .background(color = BiruJ.copy(alpha = 0.59f), shape = slotShape),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
@@ -213,8 +241,12 @@ fun HomeScreen(navController: NavController) {
                     Box(
                         modifier = Modifier
                             .size(width = 100.dp, height = 100.dp)
-                            .clip(RoundedCornerShape(5.dp))
-                            .background(color = BiruB),
+                            .shadow(
+                                elevation = 10.dp,
+                                shape = slotShape
+                            )
+                            .background(Color.White, shape = slotShape)
+                            .background(color = BiruJ.copy(alpha = 0.59f), shape = slotShape),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
@@ -227,8 +259,12 @@ fun HomeScreen(navController: NavController) {
                     Box(
                         modifier = Modifier
                             .size(width = 100.dp, height = 100.dp)
-                            .clip(RoundedCornerShape(5.dp))
-                            .background(color = BiruB),
+                            .shadow(
+                                elevation = 10.dp,
+                                shape = slotShape
+                            )
+                            .background(Color.White, shape = slotShape)
+                            .background(color = Color.Gray.copy(alpha = 0.59f), shape = slotShape),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
@@ -250,15 +286,19 @@ fun HomeScreen(navController: NavController) {
                         Spacer(modifier = Modifier.width(50.dp))
                     }
                 }
-                Spacer(modifier = Modifier.height(35.dp))
+                Spacer(modifier = Modifier.height(45.dp))
                 Row {
                     Row {
                         Box(
                             modifier = Modifier
-                                .size(width = 100.dp, height = 100.dp)
-                                .clip(RoundedCornerShape(5.dp))
-                                .background(color = BiruB),
-                            contentAlignment = Alignment.Center
+                            .size(width = 100.dp, height = 100.dp)
+                            .shadow(
+                                elevation = 10.dp,
+                                shape = slotShape
+                            )
+                            .background(Color.White, shape = slotShape)
+                            .background(color = Color.Gray.copy(alpha = 0.59f), shape = slotShape),
+                        contentAlignment = Alignment.Center
                         ) {
                             Text(
                                 text = "A4",
@@ -269,10 +309,14 @@ fun HomeScreen(navController: NavController) {
                         Spacer(modifier = Modifier.width(13.dp))
                         Box(
                             modifier = Modifier
-                                .size(width = 100.dp, height = 100.dp)
-                                .clip(RoundedCornerShape(5.dp))
-                                .background(color = BiruB),
-                            contentAlignment = Alignment.Center
+                            .size(width = 100.dp, height = 100.dp)
+                            .shadow(
+                                elevation = 10.dp,
+                                shape = slotShape
+                            )
+                            .background(Color.White, shape = slotShape)
+                            .background(color = Color.Gray.copy(alpha = 0.59f), shape = slotShape),
+                        contentAlignment = Alignment.Center
                         ) {
                             Text(
                                 text = "A5",
@@ -282,7 +326,7 @@ fun HomeScreen(navController: NavController) {
                         }
 
                     }
-                    Spacer(modifier = Modifier.width(55.dp))
+                    Spacer(modifier = Modifier.width(75.dp))
                     Column(
                         horizontalAlignment = Alignment.Start
                     ) {
@@ -299,22 +343,30 @@ fun HomeScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(25.dp))
 
                 Row {
-                    Box (
+                    Box(
                         modifier = Modifier
                             .size(width = 150.dp, height = 50.dp)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(color = BiruJ),
+                            .shadow(
+                                elevation = 10.dp,
+                                shape = RoundedCornerShape(16.dp)
+                            )
+                            .background(Color.White, shape = circleShape)
+                            .background(color = BiruJ, shape = RoundedCornerShape(16.dp)),
                         contentAlignment = Alignment.Center
-                    ){
-                        Row (
+                    ) {
+                        Row(
                             verticalAlignment = Alignment.CenterVertically
-                        ){
+                        ) {
                             Box(
-                          modifier = Modifier
-                              .size(width = 20.dp, height = 20.dp)
-                              .clip(RoundedCornerShape(25.dp))
-                              .background(Color.White)
-                            ){}
+                                modifier = Modifier
+                                    .size(width = 20.dp, height = 20.dp)
+                                    .shadow(
+                                elevation = 10.dp,
+                                shape = circleShape
+                            )
+                            .background(Color.White, shape = circleShape)
+                            .background(color = Color.Gray.copy(alpha = 0.59f), shape = slotShape)
+                            ) {}
                             Spacer(modifier = Modifier.width(10.dp))
                             Text(
                                 text = "Full",
@@ -323,32 +375,41 @@ fun HomeScreen(navController: NavController) {
                             )
                         }
                     }
-                      Spacer(modifier = Modifier.width(20.dp))
-                    Box (
+                    Spacer(modifier = Modifier.width(20.dp))
+                    Box(
                         modifier = Modifier
                             .size(width = 150.dp, height = 50.dp)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(color = BiruJ),
+                            .shadow(
+                                elevation = 10.dp,
+                                shape = RoundedCornerShape(16.dp)
+                            )
+                            .background(Color.White, shape = circleShape)
+                            .background(color = BiruJ, shape = RoundedCornerShape(16.dp)),
                         contentAlignment = Alignment.Center
-                    ){
-                        Row (
+                    ) {
+                        Row(
                             verticalAlignment = Alignment.CenterVertically
-                        ){
+                        ) {
                             Box(
-                          modifier = Modifier
-                              .size(width = 20.dp, height = 20.dp)
-                              .clip(RoundedCornerShape(25.dp))
-                              .background(Color.White)
-                        ){}
+                                modifier = Modifier
+                                    .size(width = 20.dp, height = 20.dp)
+                                    .shadow(
+                                elevation = 10.dp,
+                                shape = circleShape
+                            )
+                            .background(Color.White, shape = circleShape)
+                            .background(color = BiruJ.copy(alpha = 0.59f), shape = slotShape)
+                            ) {}
                             Spacer(modifier = Modifier.width(10.dp))
                             Text(
-                                text = "Full",
+                                text = "Free",
                                 fontSize = 32.sp,
                                 color = Color.White
                             )
                         }
                     }
                 }
+                Spacer(modifier = Modifier.height(30.dp))
 
             }
         }
